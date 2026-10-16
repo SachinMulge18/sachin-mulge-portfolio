@@ -1,0 +1,42 @@
+.section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.section::before,
+.section::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  pointer-events: none;
+}
+
+.section::before {
+  background-image:
+    linear-gradient(rgb(148 163 184 / 7%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(148 163 184 / 7%) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: linear-gradient(to bottom, transparent, black 12%, black 68%, transparent);
+  opacity: 0.5;
+  transform: perspective(850px) rotateX(53deg) rotateZ(-17deg) scale(1.65);
+  transform-origin: 50% 48%;
+}
+
+.section::after {
+  background:
+    radial-gradient(ellipse at 73% 47%, rgb(34 211 238 / 8%), transparent 35%),
+    radial-gradient(ellipse at 25% 55%, rgb(9 9 11 / 0%), var(--color-base) 78%);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section::before {
+    transform: none;
+  }
+}

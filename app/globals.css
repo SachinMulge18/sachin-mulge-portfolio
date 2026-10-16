@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --color-base: #09090b;
+  --color-surface: #111114;
+  --color-raised: #18181b;
+  --color-line: #27272a;
+  --color-muted: #a1a1aa;
+  --color-accent: #22d3ee;
+  --color-accent-2: #34d399;
+}
+
+@theme inline {
+  --font-display: var(--font-bricolage), system-ui, sans-serif;
+  --font-sans: var(--font-instrument), system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--color-base); color: #e4e4e7; font-family: var(--font-sans); }
+::selection { background: color-mix(in oklab, var(--color-accent) 35%, transparent); }
+
+/* Cursor-tracking glow border. Position is set via CSS vars, so no React re-renders (stays 60fps). */
+.spot { position: relative; }
+.spot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: radial-gradient(140px circle at var(--mx, 50%) var(--my, 50%), var(--color-accent), var(--color-accent-2) 45%, transparent 75%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+.spot:hover::before, .spot:focus-visible::before { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
