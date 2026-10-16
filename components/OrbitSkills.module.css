@@ -37,7 +37,6 @@
 }
 
 .ring {
-  border:2px solid red;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -75,7 +74,6 @@
 }
 
 .panel {
-  border:2px solid red;
   position: absolute;
   top: 15%;
   left: 34%;
@@ -315,6 +313,48 @@
   .panel {
     left: 32%;
     width: 66%;
+  }
+}
+
+@media (max-width: 767px) {
+  .stage {
+    width: min(100%, 520px);
+    aspect-ratio: 0.88;
+  }
+
+  .orbit {
+    left: 50%;
+    
+  }
+
+  .panel {
+    top: 13%;
+    left: 25%;
+    width: 74%;
+    transform: none;
+  }
+
+  .panel-code {
+    padding: 20px 18px;
+    font-size: clamp(11px, 3cqi, 14px);
+  }
+
+  .panel-bar {
+    height: 44px;
+  }
+
+  .skill {
+    width: clamp(36px, 10cqi, 44px);
+    height: clamp(36px, 10cqi, 44px);
+    border-radius: 12px;
+  }
+
+  .orbit--1 .skill-position {
+    transform: rotate(var(--skill-angle)) translateY(-42cqi);
+  }
+
+  .orbit--2 .skill-position {
+    transform: rotate(var(--skill-angle)) translateY(-32cqi);
   }
 }
 
