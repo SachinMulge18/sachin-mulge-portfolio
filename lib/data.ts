@@ -44,13 +44,6 @@ export const skillGroups = [
   },
 ];
 
-export const metrics = [
-  { value: 2.9, decimals: 1, prefix: "", suffix: "+", label: "Years building web applications" },
-  { value: 35, decimals: 0, prefix: "~", suffix: "%", label: "Fewer redundant API calls through caching" },
-  { value: 500, decimals: 0, prefix: "", suffix: "+", label: "Land parcels managed in the NGSP portal" },
-  { value: 30, decimals: 0, prefix: "", suffix: "+", label: "REST APIs integrated into the Famark platform" },
-];
-
 export const projects = [
   {
     title: "Nagpur–Goa Shaktipeeth Land Acquisition System (NGSP)",

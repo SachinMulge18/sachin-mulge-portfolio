@@ -76,7 +76,7 @@ export default function Projects() {
               </span>
             </div>
             <p className="relative mt-4 flex-1 leading-relaxed text-muted">{p.summary}</p>
-            <div className="relative mt-5 grid gap-4 border-t border-line pt-5 sm:grid-cols-2">
+            <div className="relative mt-5 grid gap-4 border-t border-line pt-5 xl:grid-cols-2">
               <div className="rounded-xl border border-white/[0.05] bg-black/10 p-3.5">
                 <h4 className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-white">
                   <FaCode className="size-3.5 text-cyan-300" aria-hidden /> Frontend
